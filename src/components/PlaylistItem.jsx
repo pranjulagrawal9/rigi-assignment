@@ -1,11 +1,14 @@
 import { MdDragHandle } from "react-icons/md";
+import { useSearchParams } from "react-router-dom";
 
-function PlaylistItem({ thumb, title, subtitle, provided }) {
+function PlaylistItem({ thumb, title, subtitle, provided, id }) {
+  let [searchParams, setSearchParams] = useSearchParams();
   return (
     <div
       className="flex py-2 items-center mt-3 lg:mt-0 bg-amber-200 cursor-pointer"
       ref={provided.innerRef}
       {...provided.draggableProps}
+      onClick={() => setSearchParams({ v: id })}
     >
       <div {...provided.dragHandleProps}>
         <MdDragHandle size={24} />

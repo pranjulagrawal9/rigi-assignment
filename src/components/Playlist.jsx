@@ -1,9 +1,8 @@
 import { useState } from "react";
 import PlaylistItem from "./PlaylistItem";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
-import { data } from "../data";
 
-function Playlist() {
+function Playlist({ data }) {
   const [items, setItems] = useState(data);
 
   const reorder = (list, startIndex, endIndex) => {
@@ -37,11 +36,7 @@ function Playlist() {
             className="max-h-[400px] overflow-auto"
           >
             {items?.map((item, index) => (
-              <Draggable
-                key={item.title}
-                draggableId={item.title}
-                index={index}
-              >
+              <Draggable key={item.id} draggableId={item.id} index={index}>
                 {(provided, snapshot) => (
                   <PlaylistItem provided={provided} {...item} />
                 )}
