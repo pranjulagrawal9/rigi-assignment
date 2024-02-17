@@ -1,23 +1,21 @@
 import { MdDragHandle } from "react-icons/md";
 
-function PlaylistItem() {
+function PlaylistItem({ thumb, title, subtitle, provided }) {
   return (
-    <div className="flex py-2 items-center mt-3 bg-amber-200 cursor-pointer">
-      <div>
+    <div
+      className="flex py-2 items-center mt-3 lg:mt-0 bg-amber-200 cursor-pointer"
+      ref={provided.innerRef}
+      {...provided.draggableProps}
+    >
+      <div {...provided.dragHandleProps}>
         <MdDragHandle size={24} />
       </div>
-      <div className="w-1/4 mr-2">
-        <img
-          src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WeAreGoingOnBullrun.jpg"
-          alt=""
-          className="rounded-lg"
-        />
+      <div className="w-28 mr-2">
+        <img src={thumb} alt={title} className="rounded-lg" />
       </div>
-      <div className="w-3/4">
-        <p className="font-medium">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        </p>
-        <p className="text-gray-600">By Subtitle</p>
+      <div>
+        <p className="font-medium">{title}</p>
+        <p className="text-gray-600">{subtitle}</p>
       </div>
     </div>
   );
