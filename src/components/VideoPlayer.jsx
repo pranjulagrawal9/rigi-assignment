@@ -9,7 +9,7 @@ import {
 
 function VideoPlayer({ ...props }) {
   return (
-    <MediaPlayer {...props} title="Sprite Fight" crossOrigin autoPlay>
+    <MediaPlayer {...props} crossOrigin autoPlay>
       <MediaProvider />
       <DefaultAudioLayout icons={defaultLayoutIcons} />
       <DefaultVideoLayout icons={defaultLayoutIcons} />

@@ -2,7 +2,7 @@ export const data = [
   {
     id: "a069f0b9-121c-453b-af55-63f77bc44ca5",
     description:
-      "Introducing Chromecast. The easiest way to enjoy online video and music on your TV. For $35.  Find out more at google.com/chromecast.",
+      "Introducing Chromecast. The easiest way to enjoy online video and music on your TV. For $35.  Find out more at google.com/chromecast. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum architecto ullam officiis deserunt, molestiae quia fugiat a? Praesentium, quae blanditiis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum architecto ullam officiis deserunt, molestiae quia fugiat a? Praesentium, quae blanditiis.",
     sources: [
       "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
     ],
