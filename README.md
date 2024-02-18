@@ -40,6 +40,6 @@ __Note:__ Do not use Strict Mode while running locally because I am using an ext
 
 ## Tech Stack
 
-- React.js, Tailwind CSS.
-- vidstack library for video player.
+- React.js, React Router, Tailwind CSS.
+- vidstack library for building video player.
 - react-beautiful-dnd library for implementing re-ordering of videos in playlists.
