@@ -7,15 +7,12 @@ import {
   DefaultVideoLayout,
 } from "@vidstack/react/player/layouts/default";
 
-function VideoPlayer({ src, ...props }) {
+function VideoPlayer({ ...props }) {
   return (
-    <MediaPlayer {...props} title="Sprite Fight" src={src} crossOrigin>
+    <MediaPlayer {...props} title="Sprite Fight" crossOrigin autoPlay>
       <MediaProvider />
       <DefaultAudioLayout icons={defaultLayoutIcons} />
-      <DefaultVideoLayout
-        icons={defaultLayoutIcons}
-        thumbnails="https://image.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/storyboard.vtt"
-      />
+      <DefaultVideoLayout icons={defaultLayoutIcons} />
     </MediaPlayer>
   );
 }

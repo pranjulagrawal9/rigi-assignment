@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import PlaylistItem from "./PlaylistItem";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 
-function Playlist({ data }) {
-  const [items, setItems] = useState(data);
+function Playlist({ videos, onChange: setVideos, activeVideoIndex }) {
+  const itemsRef = useRef([]);
 
   const reorder = (list, startIndex, endIndex) => {
     const result = Array.from(list);
@@ -19,26 +19,40 @@ function Playlist({ data }) {
     }
 
     const reorderedItems = reorder(
-      items,
+      videos,
       result.source.index,
       result.destination.index
     );
 
-    setItems(reorderedItems);
+    setVideos(reorderedItems);
   }
+
+  useEffect(() => {
+    const activeVideo = itemsRef?.current[activeVideoIndex];
+    activeVideo.focus();
+    activeVideo.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+    });
+  }, [activeVideoIndex]);
+
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <Droppable droppableId="droppable">
-        {(provided, snapshot) => (
+        {(provided) => (
           <div
             ref={provided.innerRef}
             {...provided.droppableProps}
             className="max-h-[400px] overflow-auto"
           >
-            {items?.map((item, index) => (
+            {videos?.map((item, index) => (
               <Draggable key={item.id} draggableId={item.id} index={index}>
-                {(provided, snapshot) => (
-                  <PlaylistItem provided={provided} {...item} />
+                {(provided) => (
+                  <PlaylistItem
+                    provided={provided}
+                    {...item}
+                    ref={(el) => (itemsRef.current[index] = el)}
+                  />
                 )}
               </Draggable>
             ))}

@@ -3,21 +3,38 @@ import "./App.css";
 import Playlist from "./components/Playlist";
 import VideoPlayer from "./components/VideoPlayer";
 import { data } from "./data";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
-  let [searchParams, setSearchParams] = useSearchParams();
-  const video = data?.find((video) => video.id === searchParams.get("v"));
+  const [videos, setVideos] = useState(data);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [activeVideoIndex, setActiveVideoIndex] = useState(0);
+  const currVideo = videos?.find((video) => video.id === searchParams.get("v"));
+
+  function handleVideoChangeOnEnd() {
+    const currentVideoIndex = videos.indexOf(currVideo);
+    setActiveVideoIndex(
+      currentVideoIndex < videos.length - 1 ? currentVideoIndex + 1 : 0
+    );
+  }
 
   useEffect(() => {
-    setSearchParams({ v: data[0].id });
-  }, []);
+    setSearchParams({ v: videos[activeVideoIndex].id });
+  }, [activeVideoIndex]);
 
   return (
     <div className="flex justify-center mt-10">
       <div className="flex flex-col w-[90%] lg:w-[95%] lg:flex-row gap-2">
-        <VideoPlayer className="lg:w-[70%] h-fit" src={video?.sources[0]} />
-        <Playlist data={data} />
+        <VideoPlayer
+          className="lg:w-[70%] h-fit"
+          src={currVideo?.sources[0]}
+          onEnd={handleVideoChangeOnEnd}
+        />
+        <Playlist
+          videos={videos}
+          onChange={setVideos}
+          activeVideoIndex={activeVideoIndex}
+        />
       </div>
     </div>
   );
