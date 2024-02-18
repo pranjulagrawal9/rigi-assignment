@@ -1,5 +1,17 @@
 export const data = [
   {
+    id: "a069f0b9-121c-453b-af55-63f77bc44ca5",
+    description:
+      "Introducing Chromecast. The easiest way to enjoy online video and music on your TV. For $35.  Find out more at google.com/chromecast.",
+    sources: [
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+    ],
+    subtitle: "By Google",
+    thumb:
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg",
+    title: "For Bigger Fun",
+  },
+  {
     id: "4ef35365-aa1a-4680-b65e-4b2f4e210ace",
     description:
       "Big Buck Bunny tells the story of a giant rabbit with a heart bigger than himself. When one sunny day three rodents rudely harass him, something snaps... and the rabbit ain't no bunny anymore! In the typical cartoon tradition he prepares the nasty rodents a comical revenge.\n\nLicensed under the Creative Commons Attribution license\nhttp://www.bigbuckbunny.org",
@@ -46,18 +58,7 @@ export const data = [
       "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg",
     title: "For Bigger Escape",
   },
-  {
-    id: "a069f0b9-121c-453b-af55-63f77bc44ca5",
-    description:
-      "Introducing Chromecast. The easiest way to enjoy online video and music on your TV. For $35.  Find out more at google.com/chromecast.",
-    sources: [
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-    ],
-    subtitle: "By Google",
-    thumb:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg",
-    title: "For Bigger Fun",
-  },
+
   {
     id: "7ebbb5f6-d623-4b40-8d9f-46b2026b6a58",
     description:

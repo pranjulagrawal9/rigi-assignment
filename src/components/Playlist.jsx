@@ -2,7 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import PlaylistItem from "./PlaylistItem";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 
-function Playlist({ videos, onChange: setVideos, activeVideoIndex }) {
+function Playlist({
+  videos,
+  onChange: setVideos,
+  activeVideoIndex,
+  setActiveVideoIndex,
+}) {
   const itemsRef = useRef([]);
 
   const reorder = (list, startIndex, endIndex) => {
@@ -43,7 +48,7 @@ function Playlist({ videos, onChange: setVideos, activeVideoIndex }) {
           <div
             ref={provided.innerRef}
             {...provided.droppableProps}
-            className="mt-5 lg:mt-0 max-h-[500px] lg:max-h-full lg:top-0 lg:left-[71%] overflow-auto lg:absolute"
+            className="mt-5 lg:mt-0 max-h-[500px] lg:max-h-full lg:top-0 lg:left-[68%] lg:w-[32%] overflow-auto lg:absolute rounded-xl text-white bg-black border border-gray-500"
           >
             {videos?.map((item, index) => (
               <Draggable key={item.id} draggableId={item.id} index={index}>
@@ -52,6 +57,8 @@ function Playlist({ videos, onChange: setVideos, activeVideoIndex }) {
                     provided={provided}
                     {...item}
                     ref={(el) => (itemsRef.current[index] = el)}
+                    onClick={() => setActiveVideoIndex(index)}
+                    isActive={activeVideoIndex === index}
                   />
                 )}
               </Draggable>
