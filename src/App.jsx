@@ -23,10 +23,10 @@ function App() {
   }, [activeVideoIndex]);
 
   return (
-    <div className="flex justify-center mt-10">
-      <div className="flex flex-col w-[90%] lg:w-[95%] lg:flex-row gap-2">
+    <div className="flex justify-center my-10">
+      <div className="w-[90%] lg:w-[95%] lg:relative">
         <VideoPlayer
-          className="lg:w-[70%] h-fit"
+          className="lg:w-[70%]"
           src={currVideo?.sources[0]}
           onEnd={handleVideoChangeOnEnd}
         />

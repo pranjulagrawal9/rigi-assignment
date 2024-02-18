@@ -43,7 +43,7 @@ function Playlist({ videos, onChange: setVideos, activeVideoIndex }) {
           <div
             ref={provided.innerRef}
             {...provided.droppableProps}
-            className="max-h-[400px] overflow-auto"
+            className="mt-5 lg:mt-0 max-h-[500px] lg:max-h-full lg:top-0 lg:left-[71%] overflow-auto lg:absolute"
           >
             {videos?.map((item, index) => (
               <Draggable key={item.id} draggableId={item.id} index={index}>

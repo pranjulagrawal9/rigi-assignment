@@ -12,7 +12,7 @@ const PlaylistItem = forwardRef(function PlaylistItem(
   return (
     <div ref={ref}>
       <div
-        className={`flex py-2 items-center mt-3 lg:mt-0 cursor-pointer ${
+        className={`flex py-2 items-center mb-3 lg:mt-0 cursor-pointer ${
           isActive ? "bg-amber-100" : "bg-amber-200"
         } hover:bg-amber-100`}
         ref={provided.innerRef}
