@@ -41,6 +41,8 @@ __Note:__ Do not use Strict Mode while running locally because I am using an ext
 
 - __Playlist__ to display and manage videos, allow users to reorder videos in the playlist, clicking on a video in the playlist loads and plays that video in the video player, next video plays automatically after completing the current video.
 
+- Completely responsive for all screens.
+
 ## Tech Stack
 
 - React.js, React Router, Tailwind CSS.
