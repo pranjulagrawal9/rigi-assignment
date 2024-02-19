@@ -43,3 +43,6 @@ __Note:__ Do not use Strict Mode while running locally because I am using an ext
 - React.js, React Router, Tailwind CSS.
 - vidstack library for building video player.
 - react-beautiful-dnd library for implementing re-ordering of videos in playlists.
+
+## Lighthouse Report
+![Screen Shot](https://github.com/pranjulagrawal9/rigi-assignment/blob/master/Lighthouse-report.png)
