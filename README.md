@@ -3,6 +3,9 @@
 
 It is a Video Player application built using React.js to allow users to play videos from a playlist. It supports features like seeking, timer, autoplay, and speed selector. Additionally, users can reorder the playlist.
 
+![Screen Shot](https://github.com/pranjulagrawal9/rigi-assignment/blob/master/screenshots/video-player1.png)
+![Screen Shot](https://github.com/pranjulagrawal9/rigi-assignment/blob/master/screenshots/video-player2.png)
+
 
 ## Hosted Link
 
