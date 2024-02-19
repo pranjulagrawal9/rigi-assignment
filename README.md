@@ -29,7 +29,7 @@ Install dependencies
 Start the server
 
 ```bash
-  npm run start
+  npm run dev
 ```
 
 __Note:__ Do not use Strict Mode while running locally because I am using an external library that do not work with Strict Mode.
